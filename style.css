@@ -1,19 +1,49 @@
+/* Resetting default margin and padding */
 body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full height of the viewport */
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Aligns children in a column layout */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Title */
+h1 {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 2rem;
     text-align: center;
-    font-family: arial, sans-serif;
+    color: #333;
 }
 
+/* Grid container (centered) */
 #grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(16, 1fr); /* Create 16 equal-width columns */
+    grid-template-rows: repeat(16, 1fr); /* Create 16 equal-height rows */
+    width: 480px;  /* Total width of the grid container */
+    height: 480px; /* Total height of the grid container */
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    grid-gap: 2px; /* Optional, for spacing between squares */
 }
 
+/* Styling for each square in the grid */
 .grid-square {
-    width: 30px;
-    height: 30px;
-    background-color: white;
+    background-color: #e0e0e0;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    transition: background-color 0.1s; /* Adds a smooth transition for color change */
+}
+
+/* Button for resizing grid */
+#resize-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px; /* Adjusts the spacing from the top */
 }
